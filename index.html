@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>しんのすけ | 才能を、売れる形に。 — AI × デザイン × マーケ</title>
+<meta name="description" content="AI × デザイン × マーケティングで、あなたの才能を「売れる形」に変えるクリエイター。LP・Webサイト制作、デザイン、AI活用講座、SNS発信設計まで一気通貫でお引き受けします。">
+<meta property="og:title" content="しんのすけ | 才能を、売れる形に。">
+<meta property="og:description" content="AI × デザイン × マーケで、才能を売れる形に変える人。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/hero-figure.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="icon" href="images/logo.png" type="image/png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ローディング画面 -->
+<div class="loader" id="loader">
+  <div class="loader__inner">
+    <div class="loader__word" aria-hidden="true">
+      <span>I</span><span>G</span><span>N</span><span>I</span><span>T</span><span>E</span>
+    </div>
+    <div class="loader__sub">VISION &nbsp;/&nbsp; IMPACT</div>
+    <div class="loader__bar"><i></i></div>
+  </div>
+  <div class="loader__curtain loader__curtain--t"></div>
+  <div class="loader__curtain loader__curtain--b"></div>
+</div>
+
+<!-- スクロール進捗バー -->
+<div class="progress" id="progress"></div>
+
+<!-- カスタムカーソル（PCのみ） -->
+<div class="cursor" id="cursor"><span class="cursor__label"></span></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- 画面全体のノイズ／ハーフトーン -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ヘッダー -->
+<header class="header" id="header">
+  <a href="#hero" class="header__logo" data-cursor="TOP">
+    <img src="images/logo.png" alt="SHINNOSUKE" width="1200" height="651">
+  </a>
+  <nav class="header__nav">
+    <a href="#about"><i>01</i>ABOUT</a>
+    <a href="#service"><i>02</i>SERVICE</a>
+    <a href="#works"><i>03</i>WORKS</a>
+    <a href="#process"><i>04</i>PROCESS</a>
+    <a href="#contact" class="is-cta">CONTACT</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="メニューを開く" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<!-- モバイルメニュー -->
+<div class="drawer" id="drawer">
+  <ul>
+    <li><a href="#about"><i>01</i><b>ABOUT</b><em>この人はこんな人</em></a></li>
+    <li><a href="#service"><i>02</i><b>SERVICE</b><em>できること</em></a></li>
+    <li><a href="#works"><i>03</i><b>WORKS</b><em>制作実績</em></a></li>
+    <li><a href="#process"><i>04</i><b>PROCESS</b><em>依頼の流れ</em></a></li>
+    <li><a href="#stance"><i>05</i><b>STANCE</b><em>大切にしていること</em></a></li>
+    <li><a href="#contact"><i>06</i><b>CONTACT</b><em>お問い合わせ</em></a></li>
+  </ul>
+  <p class="drawer__sig">IGNITE VISION. CREATE IMPACT.</p>
+</div>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero__bg" aria-hidden="true">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <span class="blob blob--3"></span>
+    <span class="halftone"></span>
+    <svg class="hero__lines" viewBox="0 0 800 900" preserveAspectRatio="none">
+      <path d="M-20,620 C180,520 320,700 520,540 C660,430 760,470 830,400" />
+      <path d="M-20,680 C200,600 340,760 540,600 C680,490 780,530 830,460" />
+      <path d="M-20,740 C220,680 360,820 560,660 C700,550 800,590 830,520" />
+    </svg>
+  </div>
+
+  <div class="hero__grid">
+    <div class="hero__visual">
+      <span class="hero__disc" aria-hidden="true"></span>
+      <div class="hero__figure" id="heroTilt">
+        <img src="images/hero-figure.webp" alt="しんのすけ" id="heroImg" width="775" height="1200" fetchpriority="high">
+      </div>
+    </div>
+
+    <div class="hero__copy">
+      <p class="hero__eyebrow" data-reveal>AI &times; デザイン &times; マーケ</p>
+      <h1 class="hero__title">
+        <span class="line" data-split>才能を、</span>
+        <span class="line" data-split>売れる形に。</span>
+      </h1>
+      <p class="hero__lead" data-reveal data-delay="200">
+        コンセプト設計から、デザイン、実装、発信までを一人で貫く。<br>
+        まだ言葉になっていない価値を掘り起こし、<br class="pc">
+        「伝わって、選ばれる形」に変換します。
+      </p>
+      <div class="hero__meta" data-reveal data-delay="320">
+        <span>イラスト</span><span>デザイン</span><span>動画制作</span><span>ブランディング</span><span>AI活用講師</span><span>公式LINE構築</span>
+      </div>
+      <div class="hero__actions" data-reveal data-delay="420">
+        <a href="#contact" class="btn btn--flame magnetic" data-cursor="LET'S TALK">
+          <span>制作を相談する</span>
+          <svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#works" class="btn btn--ghost magnetic" data-cursor="SEE">実績を見る</a>
+      </div>
+      <p class="hero__name" data-reveal data-delay="520"><b>しんのすけ</b><i>SHINNOSUKE</i></p>
+    </div>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true"><span>SCROLL</span><i></i></div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>IGNITE VISION<b>◆</b>CREATE IMPACT<b>◆</b>才能を、売れる形に。<b>◆</b>CONCEPT<b>◆</b>DESIGN<b>◆</b>MARKETING<b>◆</b>AI<b>◆</b></span>
+    <span>IGNITE VISION<b>◆</b>CREATE IMPACT<b>◆</b>才能を、売れる形に。<b>◆</b>CONCEPT<b>◆</b>DESIGN<b>◆</b>MARKETING<b>◆</b>AI<b>◆</b></span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="about section" id="about">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="sec-head__no">01</span>
+      <h2 class="sec-head__ttl"><i>ABOUT</i>この人はこんな人</h2>
+    </div>
+
+    <div class="about__body">
+      <div class="about__photo" data-reveal>
+        <div class="about__photo-in">
+          <img src="images/profile.jpg" alt="しんのすけ" width="1000" height="1250" loading="lazy">
+        </div>
+        <span class="about__sig">Vision</span>
+        <p class="about__sig-txt">才能に火を灯し、<br>挑戦が巡る未来を育てる。</p>
+      </div>
+
+      <div class="about__text">
+        <p class="about__lead" data-reveal>
+          肩書きは、<em>「才能を売れる形に変える人」</em>。
+        </p>
+        <p data-reveal data-delay="120">
+          デザイナーでも、マーケターでも、講師でもある。けれど本質はいつも同じでした。
+          目の前の人が持っている「まだ形になっていない価値」を見つけて、
+          伝わる言葉と、選ばれるデザインに変換すること。
+        </p>
+        <p data-reveal data-delay="200">
+          綺麗なだけの制作物はつくりません。誰に届き、何が動くのか。
+          そこまで設計してはじめて、デザインは仕事になると考えています。
+        </p>
+
+        <ul class="about__list">
+          <li data-reveal data-delay="120"><b>本質を見抜き、意味をつくる</b><span>表面の要望ではなく、その奥にある目的から設計します。</span></li>
+          <li data-reveal data-delay="200"><b>妥協せず、磨き上げる</b><span>「とりあえず動く」ではなく「実際に使える」まで詰めます。</span></li>
+          <li data-reveal data-delay="280"><b>優しさと熱量を両立する</b><span>丁寧に伴走しながら、届けたい熱はそのまま形にします。</span></li>
+          <li data-reveal data-delay="360"><b>自己受容と野心の両立</b><span>等身大を認めたうえで、まだ見ぬ未来へ進み続けます。</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat" data-reveal><b><span class="count" data-to="150">0</span><i>人超え</i></b><span>セミナー参加人数</span></div>
+      <div class="stat" data-reveal data-delay="120"><b><span class="count" data-to="100">0</span><i>人超え</i></b><span>クライアント数</span></div>
+      <div class="stat" data-reveal data-delay="240"><b><span class="count" data-to="10">0</span><i>人</i></b><span>0→1達成サポート実績</span></div>
+      <div class="stat" data-reveal data-delay="360"><b><span class="count" data-to="6">0</span><i>領域</i></b><span>イラスト・デザイン・動画制作<br>ブランディング・AI講師・公式LINE</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE ============ -->
+<section class="service section section--ink" id="service">
+  <div class="wrap">
+    <div class="sec-head sec-head--light" data-reveal>
+      <span class="sec-head__no">02</span>
+      <h2 class="sec-head__ttl"><i>SERVICE</i>できること</h2>
+      <p class="sec-head__note">分業しないから、コンセプトが最後までブレません。</p>
+    </div>
+
+    <div class="cards">
+      <article class="card" data-reveal>
+        <span class="card__no">01</span>
+        <h3>イラスト制作</h3>
+        <p>キャラクター、挿絵、似顔絵。線とタッチで世界観そのものをつくります。文章では届かない空気を、一枚で伝える役割です。</p>
+        <ul><li>キャラクター</li><li>挿絵・カット</li><li>似顔絵</li></ul>
+        <span class="card__glow"></span>
+      </article>
+      <article class="card" data-reveal data-delay="90">
+        <span class="card__no">02</span>
+        <h3>デザイン</h3>
+        <p>チラシ、ポスター、バナー、LP。情報を整理し、見た瞬間に「何のためのものか」が伝わるレイアウトに落とし込みます。</p>
+        <ul><li>チラシ・ポスター</li><li>バナー・サムネ</li><li>LP・Webページ</li></ul>
+        <span class="card__glow"></span>
+      </article>
+      <article class="card" data-reveal data-delay="180">
+        <span class="card__no">03</span>
+        <h3>動画制作</h3>
+        <p>構成から編集、テロップまで。SNSで最後まで見られる動画、セミナーで使える動画をつくります。</p>
+        <ul><li>SNSショート</li><li>セミナー用動画</li><li>編集・テロップ</li></ul>
+        <span class="card__glow"></span>
+      </article>
+      <article class="card" data-reveal data-delay="270">
+        <span class="card__no">04</span>
+        <h3>ブランディングコンサル</h3>
+        <p>強みの言語化、コンセプト設計、見せ方の戦略。「何屋さんなのか」が一言で伝わる状態まで一緒に整えます。</p>
+        <ul><li>コンセプト設計</li><li>強みの言語化</li><li>発信の方針づくり</li></ul>
+        <span class="card__glow"></span>
+      </article>
+      <article class="card" data-reveal data-delay="360">
+        <span class="card__no">05</span>
+        <h3>AI活用講師</h3>
+        <p>複雑なAIの使い方を、非エンジニアが明日から使える手順に翻訳。研修から一般向けセミナーまで、登壇まで担当します。</p>
+        <ul><li>セミナー・研修</li><li>カリキュラム設計</li><li>業務フローのAI化</li></ul>
+        <span class="card__glow"></span>
+      </article>
+      <article class="card" data-reveal data-delay="450">
+        <span class="card__no">06</span>
+        <h3>公式LINE構築</h3>
+        <p>リッチメニュー、配信シナリオ、登録導線の設計まで。集めて終わりではなく、動いてもらうところまで設計します。</p>
+        <ul><li>リッチメニュー</li><li>配信シナリオ</li><li>登録導線の設計</li></ul>
+        <span class="card__glow"></span>
+      </article>
+    </div>
+
+    <div class="service__cta" data-reveal>
+      <div>
+        <h3>まだ形になっていない相談も歓迎です。</h3>
+        <p>「何から始めればいいか分からない」段階が、いちばん力になれる場面です。</p>
+      </div>
+      <a href="#contact" class="btn btn--flame magnetic" data-cursor="LET'S TALK"><span>相談してみる</span>
+        <svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKS ============ -->
+<section class="works section" id="works">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="sec-head__no">03</span>
+      <h2 class="sec-head__ttl"><i>WORKS</i>制作実績</h2>
+      <p class="sec-head__note">企画・デザイン・実装まで、すべて自分の手で。</p>
+    </div>
+
+    <div class="filters" id="filters" data-reveal>
+      <button class="filter is-active" data-filter="all">ALL<i>14</i></button>
+      <button class="filter" data-filter="web">WEB<i>2</i></button>
+      <button class="filter" data-filter="movie">MOVIE<i>4</i></button>
+      <button class="filter" data-filter="logo">LOGO<i>3</i></button>
+      <button class="filter" data-filter="graphic">GRAPHIC<i>5</i></button>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <article class="work" data-cat="web" data-cursor="OPEN" data-reveal>
+        <a href="https://taishinillustration8686-cmd.github.io/ai-brain-seminar-lp/" target="_blank" rel="noopener">
+          <div class="work__thumb">
+            <img src="images/work-ainou.jpg" alt="『AI脳』セミナー ランディングページ" loading="lazy">
+          </div>
+          <div class="work__body">
+            <span class="work__tag">Landing Page / 公開中</span>
+            <h3>『AI脳』セミナー LP</h3>
+            <p>コンセプト設計からコピー・デザイン・実装・公開まで一貫制作。</p>
+            <span class="work__link">VIEW SITE
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+      </article>
+      <article class="work" data-cat="web" data-cursor="OPEN" data-reveal>
+        <a href="https://taishinillustration8686-cmd.github.io/bakemono-nigaoe/" target="_blank" rel="noopener">
+          <div class="work__thumb">
+            <img src="images/work-bakemono.jpg" alt="圧倒的にバケモノ似顔絵 サイト" loading="lazy">
+          </div>
+          <div class="work__body">
+            <span class="work__tag">Website / 公開中</span>
+            <h3>圧倒的にバケモノ似顔絵</h3>
+            <p>「似顔絵を、バケモノに。」振り切った世界観で作った受注サイト。</p>
+            <span class="work__link">VIEW SITE
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+      </article>
+      <article class="work" data-cat="movie" data-cursor="OPEN" data-reveal>
+        <a href="https://youtu.be/xzDPed7eIjI" target="_blank" rel="noopener">
+          <div class="work__thumb">
+            <img src="https://i.ytimg.com/vi/xzDPed7eIjI/maxresdefault.jpg" alt="しんのすけ 映像ポートフォリオ" loading="lazy"><span class="work__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></span>
+          </div>
+          <div class="work__body">
+            <span class="work__tag">Movie / ショーリール</span>
+            <h3>映像ポートフォリオ</h3>
+            <p>これまでの映像仕事をまとめたショーリール。構成・編集を担当。</p>
+            <span class="work__link">WATCH
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+      </article>
+      <article class="work" data-cat="movie" data-cursor="OPEN" data-reveal>
+        <a href="https://youtu.be/gLcsXTzHYBE" target="_blank" rel="noopener">
+          <div class="work__thumb">
+            <img src="https://i.ytimg.com/vi/gLcsXTzHYBE/maxresdefault.jpg" alt="かくし芸大会PV" loading="lazy"><span class="work__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></span>
+          </div>
+          <div class="work__body">
+            <span class="work__tag">Movie / イベントPV</span>
+            <h3>かくし芸大会 PV</h3>
+            <p>出演者の熱をそのまま伝えるイベント告知PV。撮影素材から構成・編集。</p>
+            <span class="work__link">WATCH
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+      </article>
+      <article class="work" data-cat="movie" data-cursor="OPEN" data-reveal>
+        <a href="https://youtube.com/shorts/yM_tvXoJotg" target="_blank" rel="noopener">
+          <div class="work__thumb">
+            <img src="https://i.ytimg.com/vi/yM_tvXoJotg/maxresdefault.jpg" alt="縦型PR動画" loading="lazy"><span class="work__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></span>
+          </div>
+          <div class="work__body">
+            <span class="work__tag">Movie / 縦型ショート</span>
+            <h3>縦型PR動画</h3>
+            <p>スマホで最後まで見られる縦型フォーマットのPR動画。</p>
+            <span class="work__link">WATCH
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+      </article>
+      <article class="work" data-cat="movie" data-cursor="OPEN" data-reveal>
+        <a href="https://youtube.com/shorts/mTDcSzV2jcQ" target="_blank" rel="noopener">
+          <div class="work__thumb">
+            <img src="https://i.ytimg.com/vi/mTDcSzV2jcQ/maxresdefault.jpg" alt="MyRevo リール動画" loading="lazy"><span class="work__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></span>
+          </div>
+          <div class="work__body">
+            <span class="work__tag">Movie / リール</span>
+            <h3>MyRevo リール動画</h3>
+            <p>SNSリール用のショート動画。テンポとテロップで最後まで引っぱる設計。</p>
+            <span class="work__link">WATCH
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+      </article>
+      <article class="work" data-cat="logo" data-cursor="ZOOM" data-lightbox="images/work-logo.jpg" data-caption="SHIRA MOVIE ロゴデザイン" data-reveal>
+        <div class="work__thumb work__thumb--paper">
+          <img src="images/work-logo.jpg" alt="SHIRA MOVIE ロゴデザイン" loading="lazy">
+        </div>
+        <div class="work__body">
+          <span class="work__tag">Logo / ブランドマーク</span>
+          <h3>SHIRA MOVIE</h3>
+          <p>再生ボタンとパンダを一体化。小さく置いても伝わる形まで削ぎ落とした。</p>
+        </div>
+      </article>
+      <article class="work" data-cat="logo" data-cursor="ZOOM" data-lightbox="images/work-logo-starpot.jpg" data-caption="STAR POT ロゴデザイン" data-reveal>
+        <div class="work__thumb work__thumb--paper">
+          <img src="images/work-logo-starpot.jpg" alt="STAR POT ロゴデザイン" loading="lazy">
+        </div>
+        <div class="work__body">
+          <span class="work__tag">Logo / ブランドマーク</span>
+          <h3>STAR POT</h3>
+          <p>星と器のモチーフを重ねた、端正で信頼感のあるワードマーク。</p>
+        </div>
+      </article>
+      <article class="work" data-cat="logo" data-cursor="ZOOM" data-lightbox="images/work-logo-takuzo.jpg" data-caption="たくぞうおじさんのお店 ロゴデザイン" data-reveal>
+        <div class="work__thumb work__thumb--paper">
+          <img src="images/work-logo-takuzo.jpg" alt="たくぞうおじさんのお店 ロゴデザイン" loading="lazy">
+        </div>
+        <div class="work__body">
+          <span class="work__tag">Logo / ショップロゴ</span>
+          <h3>たくぞうおじさんのお店</h3>
+          <p>店主の似顔絵を円で囲んだ、一度で覚えてもらうための看板ロゴ。</p>
+        </div>
+      </article>
+      <article class="work" data-cat="graphic" data-cursor="ZOOM" data-lightbox="images/work-souzaku.jpg" data-caption="濃密2時間 創作トーク会" data-reveal>
+        <div class="work__thumb">
+          <img src="images/work-souzaku.jpg" alt="濃密2時間 創作トーク会" loading="lazy">
+        </div>
+        <div class="work__body">
+          <span class="work__tag">AI Generated / イベント告知</span>
+          <h3>濃密2時間 創作トーク会</h3>
+          <p>AI生成を軸に構成した告知ビジュアル。写真の質感とタイポを重ねた一枚。</p>
+        </div>
+      </article>
+      <article class="work" data-cat="graphic" data-cursor="ZOOM" data-lightbox="images/work-shimei.jpg" data-caption="こんな時代だから使命について本気出して考えてみた" data-reveal>
+        <div class="work__thumb">
+          <img src="images/work-shimei.jpg" alt="こんな時代だから使命について本気出して考えてみた" loading="lazy">
+        </div>
+        <div class="work__body">
+          <span class="work__tag">Flyer / イベント告知</span>
+          <h3>使命について本気出して考えてみた</h3>
+          <p>紅白の強いコントラストと大きな漢字で、テーマの重さを一瞬で伝える。</p>
+        </div>
+      </article>
+      <article class="work" data-cat="graphic" data-cursor="ZOOM" data-lightbox="images/work-kenshu.jpg" data-caption="名古屋初期研修" data-reveal>
+        <div class="work__thumb">
+          <img src="images/work-kenshu.jpg" alt="名古屋初期研修" loading="lazy">
+        </div>
+        <div class="work__body">
+          <span class="work__tag">Flyer / 研修告知</span>
+          <h3>名古屋初期研修</h3>
+          <p>登壇者・日程・参加方法という情報量を、迷わず読める順番に整理。</p>
+        </div>
+      </article>
+      <article class="work" data-cat="graphic" data-cursor="ZOOM" data-lightbox="images/work-matsuri.jpg" data-caption="祭学園 オンライン塾 体験会" data-reveal>
+        <div class="work__thumb">
+          <img src="images/work-matsuri.jpg" alt="祭学園 オンライン塾 体験会" loading="lazy">
+        </div>
+        <div class="work__body">
+          <span class="work__tag">Flyer / 教育</span>
+          <h3>祭学園 オンライン塾</h3>
+          <p>子ども本人と保護者、両方に届く体験会チラシ。申込導線まで設計。</p>
+        </div>
+      </article>
+      <article class="work" data-cat="graphic" data-cursor="ZOOM" data-lightbox="images/work-bunkasai.jpg" data-caption="踊る文化祭（B3横）" data-reveal>
+        <div class="work__thumb">
+          <img src="images/work-bunkasai.jpg" alt="踊る文化祭（B3横）" loading="lazy">
+        </div>
+        <div class="work__body">
+          <span class="work__tag">Poster / B3横</span>
+          <h3>踊る文化祭</h3>
+          <p>和のモチーフを敷き詰めた祭ポスター。遠くからでも読める強さに。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="works__cta" data-reveal>
+      <div>
+        <p class="works__cta-en">NEXT WORK</p>
+        <h3>次の一枚は、あなたの案件かもしれません。</h3>
+      </div>
+      <a href="#contact" class="btn btn--flame magnetic" data-cursor="LET'S TALK"><span>制作を相談する</span>
+        <svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process section section--cream2" id="process">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="sec-head__no">04</span>
+      <h2 class="sec-head__ttl"><i>PROCESS</i>依頼の流れ</h2>
+      <p class="sec-head__note">初回のご相談は無料です。まずは雑談から。</p>
+    </div>
+
+    <ol class="steps">
+      <li data-reveal>
+        <span class="steps__no">01</span>
+        <h3>ご相談・ヒアリング<em>無料</em></h3>
+        <p>やりたいこと、伝えたいこと、いまのお悩みを聞かせてください。まだ整理できていなくて大丈夫です。</p>
+      </li>
+      <li data-reveal data-delay="120">
+        <span class="steps__no">02</span>
+        <h3>コンセプト設計・お見積り</h3>
+        <p>目的・ターゲット・打ち出す軸を言語化し、必要な制作範囲と費用をご提示します。</p>
+      </li>
+      <li data-reveal data-delay="240">
+        <span class="steps__no">03</span>
+        <h3>デザイン制作</h3>
+        <p>方向性を擦り合わせながらデザインを作成。納得いくまで一緒に磨き上げます。</p>
+      </li>
+      <li data-reveal data-delay="360">
+        <span class="steps__no">04</span>
+        <h3>仕上げ・納品</h3>
+        <p>印刷データ・Web表示・スマホでの見え方まで確認したうえで、使える形にして納品します。</p>
+      </li>
+      <li data-reveal data-delay="480">
+        <span class="steps__no">05</span>
+        <h3>公開後のサポート</h3>
+        <p>運用のご相談、改善、追加制作まで。作って終わりにはしません。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ STANCE ============ -->
+<section class="stance section section--ink" id="stance">
+  <div class="wrap">
+    <div class="sec-head sec-head--light" data-reveal>
+      <span class="sec-head__no">05</span>
+      <h2 class="sec-head__ttl"><i>STANCE</i>大切にしていること</h2>
+      <p class="sec-head__note">相性は、成果物の質そのものだと思っています。</p>
+    </div>
+
+    <div class="stance__cols">
+      <div class="stance__col stance__col--yes" data-reveal>
+        <h3><span>こう関わると、いい仕事になります</span></h3>
+        <ul>
+          <li>本音で話してくれる</li>
+          <li>挑戦や行動に前向き</li>
+          <li>未来の話やアイデア交換が好き</li>
+          <li>熱量と誠実さがある</li>
+        </ul>
+      </div>
+      <div class="stance__col stance__col--no" data-reveal data-delay="150">
+        <h3><span>正直に言うと、苦手です</span></h3>
+        <ul>
+          <li>他責思考</li>
+          <li>評論だけで動かないこと</li>
+          <li>否定から入る会話</li>
+          <li>熱のない惰性的なやりとり</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="keywords" data-reveal>
+      <span class="keywords__label">KEYWORD</span>
+      <ul>
+        <li>利他</li><li>本質</li><li>挑戦</li><li>行動</li><li>世界観</li><li>未来</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact section" id="contact">
+  <div class="contact__bg" aria-hidden="true">
+    <span class="blob blob--c1"></span><span class="blob blob--c2"></span><span class="halftone halftone--c"></span>
+  </div>
+  <div class="wrap">
+    <div class="contact__inner">
+      <p class="contact__en" data-reveal>CONTACT</p>
+      <h2 class="contact__ttl">
+        <span class="line" data-split>その才能を、</span>
+        <span class="line" data-split>売れる形に。</span>
+      </h2>
+      <p class="contact__lead" data-reveal data-delay="200">
+        制作のご依頼、講座・登壇のご相談、まだ形になっていない企画の壁打ちまで。<br>
+        24時間以内にお返事します。まずはお気軽にどうぞ。
+      </p>
+
+      <form class="cform" id="cform" novalidate>
+        <div class="cform__row">
+          <label class="field" data-reveal>
+            <span class="field__label">お名前 <i>必須</i></span>
+            <input type="text" name="name" required placeholder="山田 太郎">
+          </label>
+          <label class="field" data-reveal data-delay="100">
+            <span class="field__label">メールアドレス <i>必須</i></span>
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+        </div>
+        <label class="field" data-reveal data-delay="160">
+          <span class="field__label">ご相談の種類</span>
+          <select name="type">
+            <option>LP・Webサイト制作</option>
+            <option>デザイン・イラスト制作</option>
+            <option>AI活用の講座・研修</option>
+            <option>SNSマーケティング</option>
+            <option>まだ決まっていない / その他</option>
+          </select>
+        </label>
+        <label class="field" data-reveal data-delay="220">
+          <span class="field__label">ご相談内容 <i>必須</i></span>
+          <textarea name="body" rows="5" required placeholder="やりたいこと、現状のお悩み、ご希望の時期や予算感など（分かる範囲で大丈夫です）"></textarea>
+        </label>
+        <div class="cform__submit" data-reveal data-delay="280">
+          <button type="submit" class="btn btn--flame btn--lg magnetic" data-cursor="SEND">
+            <span>この内容で相談する</span>
+            <svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="cform__note">送信ボタンを押すと、内容が入力されたメール作成画面が開きます。</p>
+        </div>
+      </form>
+
+      <div class="contact__direct" data-reveal>
+        <span>直接のご連絡はこちら</span>
+        <a href="mailto:taishinillustration8686@gmail.com" data-cursor="MAIL">taishinillustration8686@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 作品の拡大表示 -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="作品の拡大表示">
+  <button class="lightbox__close" id="lightboxClose" aria-label="閉じる">
+    <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <figure class="lightbox__fig">
+    <img id="lightboxImg" src="" alt="">
+    <figcaption id="lightboxCap"></figcaption>
+  </figure>
+</div>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <div class="footer__brand">
+      <img src="images/logo.png" alt="SHINNOSUKE" width="1200" height="651" loading="lazy">
+      <p>しんのすけ / SHINNOSUKE</p>
+    </div>
+    <p class="footer__sig">才能に火を灯し、挑戦が巡る未来を育てる。</p>
+    <p class="footer__en">IGNITE VISION. CREATE IMPACT.</p>
+    <p class="footer__copy">&copy; 2026 SHINNOSUKE. All rights reserved.</p>
+  </div>
+</footer>
+
+<a href="#hero" class="totop" id="totop" aria-label="ページ上部へ">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>
