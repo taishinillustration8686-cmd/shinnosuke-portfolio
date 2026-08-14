@@ -261,7 +261,7 @@
     const closeLb = () => {
       lb.classList.remove('is-open');
       document.body.classList.remove('is-locked');
-      setTimeout(() => { lbImg.src = ''; }, 450);
+      setTimeout(() => { lbImg.removeAttribute('src'); }, 450);
       if (lastFocus) lastFocus.focus();
     };
 
