@@ -209,12 +209,32 @@
     });
   }
 
-  /* ---------- 11. お問い合わせフォーム → メール作成画面を開く ---------- */
+  /* ---------- 11. お問い合わせフォーム ---------- */
+  /*  送信先（Google Apps ScriptのウェブアプリURL）。
+      ここが空のあいだは、これまで通りメールソフトが開くだけの動作になります。 */
+  const FORM_ENDPOINT = '';
+
   const form = $('#cform');
+  const statusEl = $('#cformStatus');
+
+  // 送信先が未設定のあいだは、案内文を実際の動作に合わせておく
+  if (!FORM_ENDPOINT) {
+    const note = $('.cform__note');
+    if (note) note.textContent = '送信ボタンを押すと、内容が入力されたメール作成画面が開きます。';
+  }
+
+  const setStatus = (msg, type) => {
+    if (!statusEl) return;
+    statusEl.textContent = msg;
+    statusEl.className = 'cform__status' + (type ? ' is-' + type : '');
+  };
+
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const get = (n) => form.elements[n].value.trim();
+
+      // 入力チェック
       let ok = true;
       ['name', 'email', 'body'].forEach(n => {
         const f = form.elements[n];
@@ -222,23 +242,45 @@
         f.classList.toggle('is-error', bad);
         if (bad && ok) { f.focus(); ok = false; }
       });
-      if (!ok) return;
+      if (!ok) { setStatus('未入力の項目があります。ご確認ください。', 'error'); return; }
 
-      const subject = '【お問い合わせ】' + get('type') + ' / ' + get('name') + ' 様';
-      const lines = [
-        'お名前：' + get('name'),
-        'メール：' + get('email'),
-        'ご相談の種類：' + get('type'),
-        '',
-        '【ご相談内容】',
-        get('body'),
-        '',
-        '---',
-        'しんのすけ ポートフォリオサイトより送信'
-      ];
-      window.location.href = 'mailto:taishinillustration8686@gmail.com'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(lines.join('\n'));
+      // 迷惑送信よけ（人には見えない欄。埋まっていたら送信しない）
+      if (form.elements['company'] && form.elements['company'].value) return;
+
+      const btn = $('button[type="submit"]', form);
+
+      // 送信先が未設定のときは、これまで通りメールソフトを開く
+      if (!FORM_ENDPOINT) {
+        const subject = '【お問い合わせ】' + get('type') + ' / ' + get('name') + ' 様';
+        const lines = [
+          'お名前：' + get('name'),
+          'メール：' + get('email'),
+          'ご相談の種類：' + get('type'),
+          '', '【ご相談内容】', get('body'),
+          '', '---', 'しんのすけ ポートフォリオサイトより送信'
+        ];
+        window.location.href = 'mailto:taishinillustration8686@gmail.com'
+          + '?subject=' + encodeURIComponent(subject)
+          + '&body=' + encodeURIComponent(lines.join('\n'));
+        return;
+      }
+
+      btn.disabled = true;
+      setStatus('送信しています…', 'sending');
+
+      try {
+        const res = await fetch(FORM_ENDPOINT, { method: 'POST', body: new FormData(form) });
+        const data = await res.json().catch(() => ({ ok: res.ok }));
+        if (!data.ok) throw new Error(data.error || '送信に失敗しました');
+
+        form.reset();
+        setStatus('送信しました。ご入力のアドレスに控えをお送りしています。24時間以内にご返信します。', 'done');
+      } catch (err) {
+        // 送信できなかったときも、メールソフト経由で連絡できる道を残す
+        setStatus('送信できませんでした。お手数ですが taishinillustration8686@gmail.com まで直接ご連絡ください。', 'error');
+      } finally {
+        btn.disabled = false;
+      }
     });
   }
 
