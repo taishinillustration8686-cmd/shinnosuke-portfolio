@@ -212,7 +212,7 @@
   /* ---------- 11. お問い合わせフォーム ---------- */
   /*  送信先（Google Apps ScriptのウェブアプリURL）。
       ここが空のあいだは、これまで通りメールソフトが開くだけの動作になります。 */
-  const FORM_ENDPOINT = '';
+  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzJqy9MyCW1i-5evu203StnvaI_TRz9FVA9zfWrBH8xCItubDVh-1L7WzWHQwKV-dj5/exec';
 
   const form = $('#cform');
   const statusEl = $('#cformStatus');
