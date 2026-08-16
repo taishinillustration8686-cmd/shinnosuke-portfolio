@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 <link rel="icon" href="images/logo.png" type="image/png">
-<link rel="stylesheet" href="css/style.css?v=202608151314">
+<link rel="stylesheet" href="css/style.css?v=202608160924">
 </head>
 <body>
 
@@ -269,11 +269,12 @@
     </div>
 
     <div class="filters" id="filters" data-reveal>
-      <button class="filter is-active" data-filter="all">ALL<i>14</i></button>
+      <button class="filter is-active" data-filter="all">ALL<i>16</i></button>
       <button class="filter" data-filter="web">WEB<i>2</i></button>
       <button class="filter" data-filter="movie">MOVIE<i>4</i></button>
+      <button class="filter" data-filter="illust">ILLUST<i>1</i></button>
       <button class="filter" data-filter="logo">LOGO<i>3</i></button>
-      <button class="filter" data-filter="graphic">GRAPHIC<i>5</i></button>
+      <button class="filter" data-filter="graphic">GRAPHIC<i>6</i></button>
     </div>
 
     <div class="gallery" id="gallery">
@@ -367,6 +368,22 @@
           </div>
         </a>
       </article>
+      <article class="work" data-cat="illust" data-cursor="OPEN" data-reveal>
+        <a href="https://store.line.me/stickershop/author/1464889/ja" target="_blank" rel="noopener">
+          <div class="work__thumb">
+            <img src="images/work-linestamp.jpg" alt="LINEスタンプ" loading="lazy">
+          </div>
+          <div class="work__body">
+            <span class="work__tag">Illustration / 販売中</span>
+            <h3>LINEスタンプ</h3>
+            <p>実在の人をデフォルメした似顔絵スタンプ。日常で使いやすい一言と表情で揃えたシリーズ。</p>
+            <span class="work__link">VIEW STORE
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+      </article>
+
       <article class="work" data-cat="logo" data-cursor="ZOOM" data-lightbox="images/work-logo.jpg" data-caption="SHIRA MOVIE ロゴデザイン" data-reveal>
         <div class="work__thumb work__thumb--paper">
           <img src="images/work-logo.jpg" alt="SHIRA MOVIE ロゴデザイン" loading="lazy">
@@ -447,6 +464,17 @@
           <p>和のモチーフを敷き詰めた祭ポスター。遠くからでも読める強さに。</p>
         </div>
       </article>
+      <article class="work" data-cat="graphic" data-cursor="ZOOM" data-lightbox="images/work-shogi.jpg" data-caption="とまっちゃん将棋クラブ" data-reveal>
+        <div class="work__thumb">
+          <img src="images/work-shogi.jpg" alt="とまっちゃん将棋クラブ チラシ" loading="lazy">
+        </div>
+        <div class="work__body">
+          <span class="work__tag">Flyer / 教室告知</span>
+          <h3>とまっちゃん将棋クラブ</h3>
+          <p>子ども向け将棋教室の募集チラシ。先生の似顔絵を主役に、駒と和柄で親しみやすく。</p>
+        </div>
+      </article>
+
     </div>
 
     <div class="works__cta" data-reveal>
@@ -660,6 +688,6 @@
   <svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
 </a>
 
-<script src="js/main.js?v=202608151314"></script>
+<script src="js/main.js?v=202608160924"></script>
 </body>
 </html>
