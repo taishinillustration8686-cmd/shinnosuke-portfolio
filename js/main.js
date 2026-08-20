@@ -284,7 +284,61 @@
     });
   }
 
-  /* ---------- 12. 作品の拡大表示（ライトボックス） ---------- */
+  /* ---------- 12. 独立ストーリー漫画（横読み） ---------- */
+  const mangaTrack = $('#mangaTrack');
+  if (mangaTrack) {
+    const pages   = $$('.manga__page', mangaTrack);
+    const counter = $('[data-manga-current]');
+    const bar     = $('[data-manga-bar]');
+    const prevBtn = $('[data-manga-prev]');
+    const nextBtn = $('[data-manga-next]');
+
+    // いま画面の中央にいるページを求める
+    const currentIndex = () => {
+      const center = mangaTrack.scrollLeft + mangaTrack.clientWidth / 2;
+      let near = 0, min = Infinity;
+      pages.forEach((el, i) => {
+        const d = Math.abs((el.offsetLeft + el.offsetWidth / 2) - center);
+        if (d < min) { min = d; near = i; }
+      });
+      return near;
+    };
+
+    const refresh = () => {
+      const i = currentIndex();
+      if (counter) counter.textContent = i + 1;
+      if (bar) bar.style.transform = 'scaleX(' + ((i + 1) / pages.length) + ')';
+      if (prevBtn) prevBtn.disabled = (i === 0);
+      if (nextBtn) nextBtn.disabled = (i === pages.length - 1);
+    };
+
+    const goTo = (i) => {
+      const t = Math.max(0, Math.min(pages.length - 1, i));
+      const el = pages[t];
+      const left = el.offsetLeft - (mangaTrack.clientWidth - el.offsetWidth) / 2;
+      mangaTrack.scrollTo({ left: Math.max(0, left), behavior: reduced ? 'auto' : 'smooth' });
+    };
+
+    let tick;
+    mangaTrack.addEventListener('scroll', () => {
+      clearTimeout(tick);
+      tick = setTimeout(refresh, 70);
+    }, { passive: true });
+
+    if (prevBtn) prevBtn.addEventListener('click', () => goTo(currentIndex() - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goTo(currentIndex() + 1));
+
+    // 矢印キーでもめくれるように
+    mangaTrack.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(currentIndex() - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(currentIndex() + 1); }
+    });
+
+    window.addEventListener('resize', refresh);
+    refresh();
+  }
+
+  /* ---------- 13. 作品・漫画の拡大表示（ライトボックス） ---------- */
   const lb = $('#lightbox');
   if (lb) {
     const lbImg = $('#lightboxImg');
@@ -307,7 +361,7 @@
       if (lastFocus) lastFocus.focus();
     };
 
-    $$('.work[data-lightbox]').forEach(el => {
+    $$('[data-lightbox]').forEach(el => {
       el.setAttribute('tabindex', '0');
       el.setAttribute('role', 'button');
       const fire = () => openLb(el.dataset.lightbox, el.dataset.caption);
@@ -322,7 +376,7 @@
     window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lb.classList.contains('is-open')) closeLb(); });
   }
 
-  /* ---------- 13. ページ内リンクをなめらかに（固定ヘッダー分を差し引く） ---------- */
+  /* ---------- 14. ページ内リンクをなめらかに（固定ヘッダー分を差し引く） ---------- */
   $$('a[href^="#"]').forEach(a => {
     a.addEventListener('click', (e) => {
       const id = a.getAttribute('href');

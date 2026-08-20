@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 <link rel="icon" href="images/logo.png" type="image/png">
-<link rel="stylesheet" href="css/style.css?v=202608161433">
+<link rel="stylesheet" href="css/style.css?v=202608210048">
 </head>
 <body>
 
@@ -47,9 +47,9 @@
   </a>
   <nav class="header__nav">
     <a href="#about"><i>01</i>ABOUT</a>
-    <a href="#service"><i>02</i>SERVICE</a>
-    <a href="#works"><i>03</i>WORKS</a>
-    <a href="#process"><i>04</i>PROCESS</a>
+    <a href="#story"><i>02</i>STORY</a>
+    <a href="#service"><i>03</i>SERVICE</a>
+    <a href="#works"><i>04</i>WORKS</a>
     <a href="#contact" class="is-cta">CONTACT</a>
   </nav>
   <button class="burger" id="burger" aria-label="メニューを開く" aria-expanded="false">
@@ -61,11 +61,12 @@
 <div class="drawer" id="drawer">
   <ul>
     <li><a href="#about"><i>01</i><b>ABOUT</b><em>この人はこんな人</em></a></li>
-    <li><a href="#service"><i>02</i><b>SERVICE</b><em>できること</em></a></li>
-    <li><a href="#works"><i>03</i><b>WORKS</b><em>制作実績</em></a></li>
-    <li><a href="#process"><i>04</i><b>PROCESS</b><em>依頼の流れ</em></a></li>
-    <li><a href="#stance"><i>05</i><b>STANCE</b><em>大切にしていること</em></a></li>
-    <li><a href="#contact"><i>06</i><b>CONTACT</b><em>お問い合わせ</em></a></li>
+    <li><a href="#story"><i>02</i><b>STORY</b><em>独立ストーリー漫画</em></a></li>
+    <li><a href="#service"><i>03</i><b>SERVICE</b><em>できること</em></a></li>
+    <li><a href="#works"><i>04</i><b>WORKS</b><em>制作実績</em></a></li>
+    <li><a href="#process"><i>05</i><b>PROCESS</b><em>依頼の流れ</em></a></li>
+    <li><a href="#stance"><i>06</i><b>STANCE</b><em>大切にしていること</em></a></li>
+    <li><a href="#contact"><i>07</i><b>CONTACT</b><em>お問い合わせ</em></a></li>
   </ul>
   <ul class="sns sns--drawer">
     <li><a href="https://www.instagram.com/t_8686_/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram" data-cursor="INSTAGRAM">
@@ -193,11 +194,104 @@
   </div>
 </section>
 
+<!-- ============ STORY（自己紹介漫画） ============ -->
+<section class="story section" id="story">
+  <div class="wrap">
+    <div class="sec-head sec-head--light" data-reveal>
+      <span class="sec-head__no">02</span>
+      <h2 class="sec-head__ttl"><i>STORY</i>漫画で読む、独立ストーリー</h2>
+      <p class="sec-head__note">終電に乗れなかったSE時代から、独立、0円の不安、そして「人の才能を輝かせる仕事」へ。全12ページ。</p>
+    </div>
+
+    <div class="manga" data-reveal>
+      <div class="manga__head">
+        <p class="manga__hint">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+          横にスワイプ／ページをクリックで拡大
+        </p>
+        <span class="manga__count"><b data-manga-current>1</b><i>/</i>12</span>
+      </div>
+
+      <div class="manga__track" id="mangaTrack" tabindex="0" aria-label="独立ストーリー漫画 全12ページ">
+          <article class="manga__page" data-cursor="ZOOM" data-lightbox="images/manga/p01.webp" data-caption="独立ストーリー 1 / 12　ただものじゃないイラストレーター、しんのすけ" aria-label="1 / 12">
+            <img src="images/manga/p01.webp" alt="独立ストーリー漫画 1ページ目 ただものじゃないイラストレーター、しんのすけ" width="860" height="1533" decoding="async" fetchpriority="high">
+            <span class="manga__page-no">01</span>
+          </article>
+          <article class="manga__page" data-cursor="ZOOM" data-lightbox="images/manga/p02.webp" data-caption="独立ストーリー 2 / 12　広いサービスと使命" aria-label="2 / 12">
+            <img src="images/manga/p02.webp" alt="独立ストーリー漫画 2ページ目 広いサービスと使命" width="860" height="1533" decoding="async">
+            <span class="manga__page-no">02</span>
+          </article>
+          <article class="manga__page" data-cursor="ZOOM" data-lightbox="images/manga/p03.webp" data-caption="独立ストーリー 3 / 12　終電に乗れないSE時代" aria-label="3 / 12">
+            <img src="images/manga/p03.webp" alt="独立ストーリー漫画 3ページ目 終電に乗れないSE時代" width="860" height="1533" decoding="async" loading="lazy">
+            <span class="manga__page-no">03</span>
+          </article>
+          <article class="manga__page" data-cursor="ZOOM" data-lightbox="images/manga/p04.webp" data-caption="独立ストーリー 4 / 12　あの笑い方が怖かった夜" aria-label="4 / 12">
+            <img src="images/manga/p04.webp" alt="独立ストーリー漫画 4ページ目 あの笑い方が怖かった夜" width="860" height="1533" decoding="async" loading="lazy">
+            <span class="manga__page-no">04</span>
+          </article>
+          <article class="manga__page" data-cursor="ZOOM" data-lightbox="images/manga/p05.webp" data-caption="独立ストーリー 5 / 12　深夜の独立勉強" aria-label="5 / 12">
+            <img src="images/manga/p05.webp" alt="独立ストーリー漫画 5ページ目 深夜の独立勉強" width="860" height="1533" decoding="async" loading="lazy">
+            <span class="manga__page-no">05</span>
+          </article>
+          <article class="manga__page" data-cursor="ZOOM" data-lightbox="images/manga/p06.webp" data-caption="独立ストーリー 6 / 12　独立と0円の現実" aria-label="6 / 12">
+            <img src="images/manga/p06.webp" alt="独立ストーリー漫画 6ページ目 独立と0円の現実" width="860" height="1533" decoding="async" loading="lazy">
+            <span class="manga__page-no">06</span>
+          </article>
+          <article class="manga__page" data-cursor="ZOOM" data-lightbox="images/manga/p07.webp" data-caption="独立ストーリー 7 / 12　マーケティング、デザイン、AIへの深化" aria-label="7 / 12">
+            <img src="images/manga/p07.webp" alt="独立ストーリー漫画 7ページ目 マーケティング、デザイン、AIへの深化" width="860" height="1533" decoding="async" loading="lazy">
+            <span class="manga__page-no">07</span>
+          </article>
+          <article class="manga__page" data-cursor="ZOOM" data-lightbox="images/manga/p08.webp" data-caption="独立ストーリー 8 / 12　才能が輝くサービスの場面" aria-label="8 / 12">
+            <img src="images/manga/p08.webp" alt="独立ストーリー漫画 8ページ目 才能が輝くサービスの場面" width="860" height="1533" decoding="async" loading="lazy">
+            <span class="manga__page-no">08</span>
+          </article>
+          <article class="manga__page" data-cursor="ZOOM" data-lightbox="images/manga/p09.webp" data-caption="独立ストーリー 9 / 12　認知されるようになった今" aria-label="9 / 12">
+            <img src="images/manga/p09.webp" alt="独立ストーリー漫画 9ページ目 認知されるようになった今" width="860" height="1533" decoding="async" loading="lazy">
+            <span class="manga__page-no">09</span>
+          </article>
+          <article class="manga__page" data-cursor="ZOOM" data-lightbox="images/manga/p10.webp" data-caption="独立ストーリー 10 / 12　グラフィックアーティストへの夢" aria-label="10 / 12">
+            <img src="images/manga/p10.webp" alt="独立ストーリー漫画 10ページ目 グラフィックアーティストへの夢" width="860" height="1533" decoding="async" loading="lazy">
+            <span class="manga__page-no">10</span>
+          </article>
+          <article class="manga__page" data-cursor="ZOOM" data-lightbox="images/manga/p11.webp" data-caption="独立ストーリー 11 / 12　読者の才能へ視点を移す" aria-label="11 / 12">
+            <img src="images/manga/p11.webp" alt="独立ストーリー漫画 11ページ目 読者の才能へ視点を移す" width="860" height="1533" decoding="async" loading="lazy">
+            <span class="manga__page-no">11</span>
+          </article>
+          <article class="manga__page" data-cursor="ZOOM" data-lightbox="images/manga/p12.webp" data-caption="独立ストーリー 12 / 12　無料相談への案内" aria-label="12 / 12">
+            <img src="images/manga/p12.webp" alt="独立ストーリー漫画 12ページ目 無料相談への案内" width="860" height="1533" decoding="async" loading="lazy">
+            <span class="manga__page-no">12</span>
+          </article>
+      </div>
+
+      <div class="manga__foot">
+        <button type="button" class="manga__nav" data-manga-prev aria-label="前のページ">
+          <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <div class="manga__bar"><i data-manga-bar></i></div>
+        <button type="button" class="manga__nav" data-manga-next aria-label="次のページ">
+          <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="story__cta" data-reveal>
+      <div>
+        <p class="story__cta-en">YOUR STORY</p>
+        <h3>この物語に何か感じたなら、<br>次はあなたの番です。</h3>
+        <p class="story__cta-note">初回のご相談は無料です。まだ形になっていない段階で大丈夫です。</p>
+      </div>
+      <a href="#contact" class="btn btn--flame magnetic" data-cursor="LET'S TALK"><span>無料で相談してみる</span>
+        <svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ SERVICE ============ -->
 <section class="service section section--ink" id="service">
   <div class="wrap">
     <div class="sec-head sec-head--light" data-reveal>
-      <span class="sec-head__no">02</span>
+      <span class="sec-head__no">03</span>
       <h2 class="sec-head__ttl"><i>SERVICE</i>できること</h2>
       <p class="sec-head__note">分業しないから、コンセプトが最後までブレません。</p>
     </div>
@@ -263,7 +357,7 @@
 <section class="works section" id="works">
   <div class="wrap">
     <div class="sec-head" data-reveal>
-      <span class="sec-head__no">03</span>
+      <span class="sec-head__no">04</span>
       <h2 class="sec-head__ttl"><i>WORKS</i>制作実績</h2>
       <p class="sec-head__note">企画・デザイン・実装まで、すべて自分の手で。</p>
     </div>
@@ -493,7 +587,7 @@
 <section class="process section section--cream2" id="process">
   <div class="wrap">
     <div class="sec-head" data-reveal>
-      <span class="sec-head__no">04</span>
+      <span class="sec-head__no">05</span>
       <h2 class="sec-head__ttl"><i>PROCESS</i>依頼の流れ</h2>
       <p class="sec-head__note">初回のご相談は無料です。まずは雑談から。</p>
     </div>
@@ -532,7 +626,7 @@
 <section class="stance section section--ink" id="stance">
   <div class="wrap">
     <div class="sec-head sec-head--light" data-reveal>
-      <span class="sec-head__no">05</span>
+      <span class="sec-head__no">06</span>
       <h2 class="sec-head__ttl"><i>STANCE</i>大切にしていること</h2>
       <p class="sec-head__note">相性は、成果物の質そのものだと思っています。</p>
     </div>
@@ -688,6 +782,6 @@
   <svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
 </a>
 
-<script src="js/main.js?v=202608161433"></script>
+<script src="js/main.js?v=202608210048"></script>
 </body>
 </html>
