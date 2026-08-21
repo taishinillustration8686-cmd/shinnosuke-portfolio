@@ -868,3 +868,63 @@ body.cursor-ready .cursor,body.cursor-ready .cursor-dot{opacity:1;}
 @media (min-width:901px){
   .manga__track{--page-w:min(32vw,380px,calc((100svh - 300px) * 0.561));}
 }
+
+/* ---------- 21. 実物を掲載していない実績カード ---------- */
+.work--text,.work--more{background:var(--cream-2);}
+.work--text .work__note,.work--more .work__note{
+  position:relative;aspect-ratio:1/1;flex:1 1 auto;   /* カード全体を埋める */
+  display:flex;flex-direction:column;justify-content:center;
+  padding:30px 28px;overflow:hidden;
+  background:radial-gradient(120% 120% at 50% 0%,#173C6E 0%,#0B1E3C 70%);
+  color:var(--cream);
+}
+.work--text .work__note::after,.work--more .work__note::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(242,231,211,.1) 1px,transparent 1.2px);
+  background-size:16px 16px;opacity:.5;
+}
+.work--text .work__note > *,.work--more .work__note > *{position:relative;z-index:1;}
+
+.work__note-en{
+  font-family:var(--serif-en);font-style:italic;letter-spacing:.26em;
+  font-size:12px;color:var(--aqua-l);
+}
+.work__note-num{
+  display:flex;align-items:baseline;gap:8px;margin:10px 0 14px;
+  font-family:var(--mincho);font-weight:700;font-size:clamp(46px,6vw,64px);line-height:1;
+  color:var(--flame);
+}
+.work__note-num i{
+  font-style:normal;font-family:var(--gothic);font-weight:700;
+  font-size:15px;letter-spacing:.08em;color:var(--cream);
+}
+.work--text h3{
+  font-family:var(--mincho);font-size:20px;letter-spacing:.04em;line-height:1.5;
+  margin:0 0 16px;color:var(--cream);
+}
+.work__note-tags{display:flex;flex-wrap:wrap;gap:7px;}
+.work__note-tags li{
+  font-size:11px;letter-spacing:.06em;padding:6px 12px;border-radius:100px;
+  border:1px solid var(--line-l);color:rgba(242,231,211,.75);
+}
+
+/* & more */
+.work--more .work__note{
+  background:var(--cream);color:var(--ink);
+  border:1px dashed rgba(11,30,60,.3);border-radius:6px;
+  align-items:flex-start;
+}
+.work--more .work__note::after{display:none;}
+.work__more{
+  font-family:var(--serif-en);font-style:italic;font-size:clamp(38px,5vw,52px);
+  line-height:1;color:var(--flame);margin-bottom:16px;display:block;
+}
+.work--more p{font-size:13px;line-height:2;opacity:.78;}
+.work__more-link{
+  display:inline-flex;align-items:center;gap:9px;margin-top:20px;
+  font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--ink);
+  border-bottom:1px solid rgba(11,30,60,.35);padding-bottom:5px;
+  transition:color .35s ease,border-color .35s ease,gap .35s var(--ease);
+}
+.work__more-link svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.work__more-link:hover{color:var(--flame);border-color:var(--flame);gap:14px;}
